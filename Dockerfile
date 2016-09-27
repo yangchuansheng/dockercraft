@@ -1,8 +1,9 @@
-FROM golang:1.6
+FROM golang:1.6.3-alpine
 
 ENV DOCKER_VERSION 1.12.1
 
 # Copy latest docker client(s)
+RUN apk add --update curl
 RUN curl -sSL -o docker.tgz https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSION}.tgz &&\
 	tar -xvf docker.tgz --strip-components=1 -C /bin && rm docker.tgz &&\
 	chmod +x /bin/docker-* &&\
