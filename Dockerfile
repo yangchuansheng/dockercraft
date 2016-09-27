@@ -1,4 +1,4 @@
-FROM golang:1.6
+FROM golang:1.6.3-alpine
 
 ENV DOCKER_VERSION 1.12.1
 
